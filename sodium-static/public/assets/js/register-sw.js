@@ -16,7 +16,7 @@ async function registerSW() {
     scope: __uv$config.prefix,
   }).then(async () => {
     const connection = new BareMux.BareMuxConnection("/baremux/worker.js")
-    const wispServer = localStorage.getItem('wispServer') || "wss://terbiumon.top/wisp/"
+    const wispServer = localStorage.getItem('wispServer') || "https://wisp.mercurywork.shop/"
     await connection.setTransport("/epx/index.mjs", [{ wisp: wispServer }]);
   });
   await navigator.serviceWorker.register('sjw.js', {
